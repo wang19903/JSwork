@@ -1,0 +1,347 @@
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    font-size: 100%;
+    font: inherit;
+    vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+    display: block;
+}
+
+body {
+    line-height: 1;
+}
+
+ol,
+ul {
+    list-style: none;
+}
+
+blockquote,
+q {
+    quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+    content: '';
+    content: none;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+
+/* HTML5 display-role reset for older browsers */
+
+body {
+    font-family: "微軟正黑體";
+}
+
+.img img {
+    max-height: 117px;
+}
+
+.input label {
+    margin-bottom: 0px;
+    color: #FFD366;
+    font-size: 18px;
+}
+
+.input input {
+    border-radius: 10px;
+    border: #FFD366 2px soild;
+    background: rgba(255, 255, 255, 0.18);
+    font-size: 24px;
+}
+
+.btn {
+    border-radius: 50%;
+    background-color: #FFD366;
+    width: 120px;
+    height: 120px;
+    font-size: 24px;
+    font-weight: bolder;
+}
+
+.result {
+    text-align: center;
+}
+
+.result h2 {
+    font-size: 2rem;
+}
+
+table {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+td {
+    padding-left: 5px;
+    font-size: 20px;
+    width: 130px;
+}
+
+span {
+    font-size: 12px;
+    vertical-align: bottom;
+}
+
+.lv1 {
+    border-left: 7px solid #31BAF9;
+}
+
+.lv2 {
+    border-left: 7px solid #86D73F;
+}
+
+.lv3 {
+    border-left: 7px solid#FF982D;
+}
+
+.lv4 {
+    border-left: 7px solid #FF6C03;
+}
+
+.lv5 {
+    border-left: 7px solid #FF6C03;
+}
+
+.lv6 {
+    border-left: 7px solid #FF1200;
+}
+
+.circle {
+    position: relative;
+}
+
+.circle h2 {
+    text-align: center;
+    padding-top: 20px;
+}
+
+.circle p {
+    text-align: center;
+    padding-top: 10px;
+}
+
+.btnBorder-lv1 {
+    border: 5px solid #31BAF9;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    font-size: 24px;
+}
+
+.btnBorder-lv2 {
+    border: 7px solid #86D73F;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    font-size: 24px;
+}
+
+.btnBorder-lv3 {
+    border: 5px solid#FF982D;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    font-size: 24px;
+}
+
+.btnBorder-lv4 {
+    border: 5px solid #FF6C03;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    font-size: 24px;
+}
+
+.btnBorder-lv5 {
+    border: 5px solid #FF6C03;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    font-size: 24px;
+}
+
+.btnBorder-lv6 {
+    border: 5px solid #FF1200;
+    border-radius: 50%;
+    width: 120px;
+    height: 120px;
+    font-size: 24px;
+}
+
+.p-lv1 {
+    color: #31BAF9;
+}
+
+.p-lv2 {
+    color: #86D73F;
+}
+
+.p-lv3 {
+    color: #FF982D;
+}
+
+.p-lv4 {
+    color: #FF6C03;
+}
+
+.p-lv5 {
+    color: #FF6C03;
+}
+
+.p-lv6 {
+    color: #FF1200;
+}
+
+.icon {
+    background-image: url(/img/icons_loop.png);
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    bottom: 45px;
+    right: 5px;
+    border-radius: 50%;
+    position: absolute;
+}
+
+.btnArea {
+    display: flex;
+}
+
+.btnArea h3 {
+    padding-left: 30px;
+    padding-top: 50px;
+    font-size: 24px;
+    font-weight: bolder;
+}
+
+.bg-lv1 {
+    background-color: #31BAF9;
+}
+
+.bg-lv2 {
+    background-color: #86D73F;
+}
+
+.bg-lv3 {
+    background-color: #FF982D;
+}
+
+.bg-lv4 {
+    background-color: #FF6C03;
+}
+
+.bg-lv5 {
+    background-color: #FF6C03;
+}
+
+.bg-lv6 {
+    background-color: #FF1200;
+}
+
+
+/**/
