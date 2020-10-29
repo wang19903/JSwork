@@ -297,7 +297,7 @@ span {
 }
 
 .icon {
-    background-image: url(img/icons_loop.png);
+    background-image: url(../img/icons_loop.png);
     background-position: center;
     background-repeat: no-repeat;
     width: 30px;
