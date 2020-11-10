@@ -6,39 +6,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
-    <link rel="stylesheet" href="css/BMI.css">
+    <link rel="stylesheet" href="/css/BMI.css">
     <title>BMI計算</title>
 </head>
 
 <body>
-    <div class="container-fluid d-flex flex-column">
+    <div class="container">
 
-        <div class="container bg-secondary row row-cols-3 mx-auto  pt-2 pb-2">
-            <div class="img d-flex justify-content-center pt-4 col ">
-                <img src="img/BMICLogo.png">
+        <div class=" bg-secondary row   pt-2 pb-2 ">
+
+            <div class="img d-flex justify-content-center pt-4 col-4 ">
+                <img src="/img/BMICLogo.png">
             </div>
-            <div class="input input-group col">
-                <form class="data needs-validation" novalidate>
-                    <div class="form-group">
-                        <label class="m-1" for="validationCustom03">身高 cm</label>
-                        <input type="text" class="height form-control" placeholder="請輸入身高" id="validationCustom03" required>
-                        <div class="invalid-feedback">
-                            請輸入身高
+
+            <div class="input input-group col-8 ">
+                <form class="data needs-validation d-flex " novalidate>
+                    <div class="pr-5">
+                        <div class="form-row">
+                            <label class="m-1" for="validationCustom03">身高 cm</label>
+                            <input type="number" class="height form-control" placeholder="請輸入身高" id="validationCustom03" required>
+                            <div class="invalid-feedback">
+                                請輸入身高
+                            </div>
+                        </div>
+
+                        <div class="form-row">
+                            <label class="m-1" for="validationCustom03">體重 kg</label>
+                            <input type="number" class="kg form-control" placeholder="請輸入體重" id="validationCustom03" required>
+                            <div class="invalid-feedback">
+                                請輸入體重
+                            </div>
                         </div>
                     </div>
-                    <div class="form-group">
-                        <label class="m-1" for="validationCustom03">體重 kg</label>
-                        <input type="text" class="kg form-control" placeholder="請輸入體重" id="validationCustom03" required>
-                        <div class="invalid-feedback">
-                            請輸入體重
-                        </div>
+
+                    <div class="btnArea pt-4 ">
+                        <input type="submit" class="btn" value="看結果" id="">
                     </div>
+
+                </form>
             </div>
-            <div class="btnArea pt-4 col ">
-                <input type="submit" class="btn" value="看結果" id="bmiText">
-            </div>
-            </form>
         </div>
+
 
         <div class="result row">
             <div class="col">
@@ -48,15 +56,39 @@
             </div>
         </div>
 
-        <div class="container mx-auto bg-warning d-flex justify-content-center p-3">
-            <img src="https://github.com/199685/BMI/blob/master/images/BMICLogodark.png?raw=true" alt="">
+        <div class="row ">
+            <div class="col mx-auto bg-warning d-flex justify-content-center p-3">
+                <img src="https://github.com/199685/BMI/blob/master/images/BMICLogodark.png?raw=true" alt="">
+            </div>
         </div>
-
     </div>
+    <script>
+        // Example starter JavaScript for disabling form submissions if there are invalid fields
+        (function() {
+            'use strict';
+            window.addEventListener('load', function() {
+                // Fetch all the forms we want to apply custom Bootstrap validation styles to
+                var forms = document.getElementsByClassName('needs-validation');
+                // Loop over them and prevent submission
+                var validation = Array.prototype.filter.call(forms, function(form) {
+                    form.addEventListener('submit', function(event) {
+                        if (form.checkValidity() === false) {
+                            event.preventDefault();
+                            event.stopPropagation();
+                        }
+                        form.classList.add('was-validated');
+                    }, false);
+                });
+            }, false);
+        })();
+    </script>
 
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
-    <script src="js/BMI.js"></script>
+
+    <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.js" integrity="sha256-QWo7LDvxbWT2tbbQ97B53yJnYU3WhH/C8ycbRAkjPDc=" crossorigin="anonymous"></script>
+    <script src="/js/BMI.js"></script>
 </body>
 
 </html>

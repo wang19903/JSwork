@@ -1,135 +1,146 @@
 .header {
-    background: url('https://i.imgur.com/CSUagNY.png');
-    background-size: cover;
-    height: 400px;
-    position: relative;
-    flex-direction: column;
+  background: url("https://i.imgur.com/CSUagNY.png");
+  background-size: cover;
+  height: 400px;
+  position: relative;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
 h1 {
-    font-size: 40px;
-    color: #FFFFFF;
-    letter-spacing: 3.89px;
+  font-size: 40px;
+  color: #FFFFFF;
+  letter-spacing: 3.89px;
 }
 
 #select {
-    background: rgba(255, 255, 255, 0.70);
-    border: 3px solid #FFFFFF;
-    border-radius: 3px;
-    margin-top: 96px;
-    margin-bottom: 10px;
-    width: 452px;
-    height: 48px;
-    font-size: 18px;
+  background: rgba(255, 255, 255, 0.7);
+  border: 3px solid #FFFFFF;
+  border-radius: 3px;
+  margin-top: 96px;
+  margin-bottom: 10px;
+  width: 452px;
+  height: 48px;
+  font-size: 18px;
 }
 
 .ButtonArea {
-    background: #FFFFFF;
-    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.20);
-    border-radius: 5px;
-    width: 70%;
-    bottom: -90px;
-    text-align: left;
-    position: absolute;
-    font-size: 18px;
+  background: #FFFFFF;
+  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+          box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+  border-radius: 5px;
+  width: 70%;
+  bottom: -90px;
+  text-align: left;
+  position: absolute;
+  font-size: 18px;
 }
 
 .btn {
-    font-size: 20px;
-    color: #FFFFFF;
-    margin: 5px;
-    padding-right: 10px;
-    padding-left: 10px;
+  font-size: 20px;
+  color: #FFFFFF;
+  margin: 5px;
+  padding-right: 10px;
+  padding-left: 10px;
 }
 
 .btn1 {
-    background: #8A82CC;
-    border-radius: 5px;
+  background: #8A82CC;
+  border-radius: 5px;
 }
 
 .btn2 {
-    background: #FFA782;
-    border-radius: 5px;
+  background: #FFA782;
+  border-radius: 5px;
 }
 
 .btn3 {
-    background: #F5D005;
-    border-radius: 5px;
+  background: #F5D005;
+  border-radius: 5px;
 }
 
 .btn4 {
-    background: #559AC8;
-    border-radius: 5px;
+  background: #559AC8;
+  border-radius: 5px;
 }
 
 #zoneName {
-    padding-top: 130px;
-    border-bottom: 1px dotted #559AC8;
-    width: 87%;
-    margin: auto;
-    font-size: 28px;
-    font-weight: 600;
+  padding-top: 130px;
+  border-bottom: 1px dotted #559AC8;
+  width: 87%;
+  margin: auto;
+  font-size: 28px;
+  font-weight: 600;
 }
 
-
-/*.title {
-    color: white;
-    text-align: left;
-    position: absolute;
-    bottom: 120px;
-    font-size: 28px;
-    font-weight: 300;
-    text-shadow: 0px 2px 5px rgba(0, 0, 0, 1);
+.marquee {
+  font-size: 28px;
+  font-weight: bold;
+  color: rgba(0, 140, 255, 0.884);
+  position: relative;
+  -webkit-animation: shake 5s infinite alternate;
+          animation: shake 5s infinite alternate;
 }
 
-.top {
-    widows: 100%;
-    height: 150px;
-    background-size: cover!important;
-    background-position: center!important;
+@-webkit-keyframes shake {
+  from {
+    left: -40%;
+  }
+  to {
+    left: 40%;
+  }
 }
 
-.bottom {
-    text-align: left;
-}*/
+@keyframes shake {
+  from {
+    left: -40%;
+  }
+  to {
+    left: 40%;
+  }
+}
 
 .footer {
-    background-color: #559AC8;
+  background-color: #559AC8;
 }
 
 .footer h2 {
-    padding-top: 12px;
-    color: #FFFFFF;
-    font-size: 14px;
+  padding-top: 12px;
+  color: #FFFFFF;
+  font-size: 14px;
 }
 
 .footer p {
-    color: #FFD366;
-    padding-bottom: 12px;
+  color: #FFD366;
+  padding-bottom: 12px;
 }
 
-
 /**/
-
 .goTop {
-    background: #A9A9A9;
-    display: flex;
-    flex-direction: row;
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    width: 50px;
-    height: 30px;
+  background: #A9A9A9;
+  display: none;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: 50px;
+  height: 30px;
 }
 
 .fas {
-    color: #FFF;
-    padding-top: px;
+  color: #FFF;
+  padding-top: px;
 }
 
-#test1 {
-    line-height: 2;
-    color: #FFF;
-    font-weight: bold;
-    font-size: 15px;
+#percent {
+  line-height: 2;
+  color: #FFF;
+  font-weight: bold;
+  font-size: 15px;
 }
+/*# sourceMappingURL=travel.css.map */

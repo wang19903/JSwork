@@ -1,0 +1,130 @@
+.header {
+    background: url('https://i.imgur.com/CSUagNY.png');
+    background-size: cover;
+    height: 400px;
+    position: relative;
+    flex-direction: column;
+}
+
+h1 {
+    font-size: 40px;
+    color: #FFFFFF;
+    letter-spacing: 3.89px;
+}
+
+#select {
+    background: rgba(255, 255, 255, 0.70);
+    border: 3px solid #FFFFFF;
+    border-radius: 3px;
+    margin-top: 96px;
+    margin-bottom: 10px;
+    width: 452px;
+    height: 48px;
+    font-size: 18px;
+}
+
+.ButtonArea {
+    background: #FFFFFF;
+    box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.20);
+    border-radius: 5px;
+    width: 70%;
+    bottom: -90px;
+    text-align: left;
+    position: absolute;
+    font-size: 18px;
+}
+
+.btn {
+    font-size: 20px;
+    color: #FFFFFF;
+    margin: 5px;
+    padding-right: 10px;
+    padding-left: 10px;
+}
+
+.btn1 {
+    background: #8A82CC;
+    border-radius: 5px;
+}
+
+.btn2 {
+    background: #FFA782;
+    border-radius: 5px;
+}
+
+.btn3 {
+    background: #F5D005;
+    border-radius: 5px;
+}
+
+.btn4 {
+    background: #559AC8;
+    border-radius: 5px;
+}
+
+#zoneName {
+    padding-top: 130px;
+    border-bottom: 1px dotted #559AC8;
+    width: 87%;
+    margin: auto;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.marquee {
+    font-size: 28px;
+    font-weight: bold;
+    color: rgba(0, 140, 255, 0.884);
+    position: relative;
+    animation: shake 5s infinite alternate;
+}
+
+@keyframes shake {
+    from {
+        left: -40%;
+    }
+    to {
+        left: 40%;
+    }
+}
+
+.footer {
+    background-color: #559AC8;
+}
+
+.footer h2 {
+    padding-top: 12px;
+    color: #FFFFFF;
+    font-size: 14px;
+}
+
+.footer p {
+    color: #FFD366;
+    padding-bottom: 12px;
+}
+
+
+/**/
+
+.goTop {
+    background: #A9A9A9;
+    display: none;
+    flex-direction: row;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: 50px;
+    height: 30px;
+}
+
+.fas {
+    color: #FFF;
+    padding-top: px;
+}
+
+#percent {
+    line-height: 2;
+    color: #FFF;
+    font-weight: bold;
+    font-size: 15px;
+}

@@ -5,54 +5,11 @@ const list = document.querySelector('.list');
 const Zone = document.querySelector('.Zone');
 
 select.addEventListener('change', zonesChange, false);
-
-////////////////////////////////////***
 Zone.addEventListener('click', ZoneClick, false);
 
 function zonesChange(e) {
     updateContent(e.target.value, 1);
 }
-
-function updateContent(zone, page) {
-    const optionZone = document.getElementById('optionZone');
-    const zoneName = document.getElementById('zoneName');
-
-    if (zone !== '請選擇上方行政區' && optionZone.getAttribute('disabled') !== 'disabled') {
-        optionZone.setAttribute('disabled', 'disabled');
-    }
-
-    zoneName.textContent = zone;
-
-    if (zone === '請選擇上方行政區') {
-        pagination(jsonData, page);
-    } else {
-        pagination(jsonData.filter(e => e.Zone === zone), page);
-    }
-}
-
-function ZoneClick(e) {
-    if (e.target.nodeName === 'INPUT') {
-        for (let i = 0; i < select.options.length; i++) {
-            if (select.options[i].value === e.target.value) {
-                select.options[i].selected = true;
-                updateContent(e.target.value, 1);
-                break;
-            }
-        }
-    }
-}
-//////////////////////////////////
-
-//上方選擇欄
-(function Option() {
-    let text = '';
-    let optionArray = [];
-    optionArray = ['--請選擇行政區--', '三民區', '新興區', '鹽埕區', '左營區', '楠梓區', '鼓山區', '旗津區', '苓雅區', '前金區', '前鎮區', '小港區', '鳳山區', '鳥松區', '大社區', '仁武區', '大樹區', '岡山區', '燕巢區', '梓官區', '永安區', '彌陀區', '橋頭區', '田寮區', '茄萣區', '阿蓮區', '路竹區', '湖內區', '那瑪夏區', '桃源區', '茂林區', '六龜區', '美濃區', '旗山區', '甲仙區', '內門區', '杉林區', '林園區', '大寮區'];
-    for (let i = 0; i < optionArray.length; i++) {
-        text += `<option id="optionZone" value="${optionArray[i]}">${optionArray[i]}</option>`;
-    }
-    select.innerHTML = text;
-})();
 
 //以物件屬性取資料
 (function getData() { //Promise語法 == XHR
@@ -61,20 +18,55 @@ function ZoneClick(e) {
             return response.json(); //處理 response
         }).then((data) => {
             jsonData = data.result.records;
-            pagination(jsonData, 1);
+            pagination(jsonData, 1);//頁
         })
 })();
 
+//上方選擇欄
+(function Option() {
+    const optionZone = document.getElementById('optionZone');
+    let text = '';
+    let optionArray = [];
+    optionArray = ['--請選擇行政區--', '三民區', '新興區', '鹽埕區', '左營區', '楠梓區', '鼓山區', '旗津區', '苓雅區', '前金區', '前鎮區', '小港區', '鳳山區', '鳥松區', '大社區', '仁武區', '大樹區', '岡山區', '燕巢區', '梓官區', '永安區', '彌陀區', '橋頭區', '田寮區', '茄萣區', '阿蓮區', '路竹區', '湖內區', '那瑪夏區', '桃源區', '茂林區', '六龜區', '美濃區', '旗山區', '甲仙區', '內門區', '杉林區', '林園區', '大寮區'];
+    for (let i = 0; i < optionArray.length; i++) {
+        text += `<option  value="${optionArray[i]}">${optionArray[i]}</option>`;
+    }
+    select.innerHTML = text;
+})();
+//改區域刷新列表
+function updateContent(zone, page) {
+    const zoneName = document.getElementById('zoneName');
+    zoneName.textContent = zone;
+
+    if (zone === '--請選擇行政區--') {
+        pagination(jsonData, page);
+    } else {
+        pagination(jsonData.filter(e => e.Zone === zone), page);
+    }
+
+    $("select option:first").attr("disabled", "ture"); //禁用change1
+}
+//按鈕
+function ZoneClick(e) {
+    if (e.target.nodeName === 'INPUT') {
+        for (let i = 0; i < select.options.length; i++) {
+            if (select.options[i].value === e.target.value) {
+                select.options[i].selected = true;
+                updateContent(e.target.value, 1);//頁
+                break;
+            }
+        }
+    }
+}
+//分頁
 function pagination(jsonData, nowPage) {
     // 取得全部資料長度
     const dataTotal = jsonData.length;
-
-    // 設定要顯示在畫面上的資料數量
-    // 預設每一頁只顯示 10 筆資料。
+    // 設定要顯示在畫面上的資料每一頁只顯示 10 筆
     const perpage = 10;
 
     // page 按鈕總數量公式 總資料數量 / 每一頁要顯示的資料
-    // 這邊要注意，因為有可能會出現餘數，所以要無條件進位。
+    // 出現餘數要無條件進位。ceil
     const pageTotal = Math.ceil(dataTotal / perpage);
 
     // 當前頁數，對應現在當前頁數
@@ -88,13 +80,12 @@ function pagination(jsonData, nowPage) {
         currentPage = pageTotal;
     }
 
-    // 由前面可知 最小數字為 6 ，所以用答案來回推公式。
+    // 由前面可知EX當前=2，最小數字為 11 ，所以用答案來回推公式。
     const minData = (currentPage * perpage) - perpage + 1;
     const maxData = (currentPage * perpage);
 
     // 先建立新陣列
     const data = [];
-    // 這邊將會使用 ES6 forEach 做資料處理
     // 首先必須使用索引來判斷資料位子，所以要使用 index
     jsonData.forEach((item, index) => {
             // 獲取陣列索引，但因為索引是從 0 開始所以要 +1。
@@ -114,11 +105,25 @@ function pagination(jsonData, nowPage) {
     }
     displayData(data);
     pageBtn(page);
-
 }
-
+//寫入資料
 function displayData(data) {
     let str = '';
+    if (data.length <= 0) {
+        str = `<div class="nowhere col-md-12 pt-0">
+        <P class="marquee">這區好像沒有地方玩喔，換個地方走走吧 :)</p>
+        </div>`;
+    }
+    //跑馬燈
+    var btn2 = document.getElementsByClassName('nowhere');
+    btn2.onclick = function() {
+        document.body.style.color = bg2();
+    };
+
+    function bg2() {
+        return '#' + Math.floor(Math.random() * 0xffffff).toString(16);
+    }
+    //  
     data.forEach((item) => {
         str += `<div class="col-md-6 py-1 px-1">
           <div class="card">
@@ -138,10 +143,11 @@ function displayData(data) {
             </div>
           </div>
         </div>`;
+
     });
     content.innerHTML = str;
 }
-
+//分頁按鈕
 function pageBtn(page) {
     let str = '';
     const total = page.pageTotal;
@@ -151,7 +157,6 @@ function pageBtn(page) {
     } else {
         str += `<li class="page-item disabled"><span class="page-link">Previous</span></li>`;
     }
-
 
     for (let i = 1; i <= total; i++) {
         if (Number(page.currentPage) === i) {
@@ -178,9 +183,7 @@ function switchPage(e) {
 }
 
 pageid.addEventListener('click', switchPage);
-
-
-
+//向上動畫
 $(document).ready(function() {
     $('.goTop a').click(function(event) {
         event.preventDefault();
@@ -189,20 +192,15 @@ $(document).ready(function() {
         }, 1000);
     });
 });
-
-
-
-
-$(function() {
-    setText();
-    $(window).scroll(setText);
-
-    function setText() {
-        let str = $("#test1");
-        str.text("");
-        let dh = $(document).height();
-        let sd = $(window).scrollTop();
-        let p13 = $('<p></p>').text(((sd / dh) * 100).toFixed(0) + '%');
-        str.append(p13);
+//下拉50XP出現按鈕和距離body頂端%數
+$(window).scroll(function() {
+    if ($(window).scrollTop() >= 50) {
+        $(".goTop").css('display', 'flex'); //show 固定為display:block，改為設定CSS
     }
+    let str = $("#percent");
+    str.text("");
+    let nowH = $(window).scrollTop() + $(window).height() - 10;
+    let bodyH = $("body").height();
+    let distance = $('<p></p>').text(((nowH / bodyH) * 100).toFixed(0) + '%');
+    str.append(distance);
 });
