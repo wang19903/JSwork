@@ -153,10 +153,10 @@ function pageBtn(page) {
     const total = page.pageTotal;
 
     if (page.hasPage) {
-        str += `<li class="page-item"><a class="page-link" href="#" data-page="${Number(page.currentPage) - 1}">Previous</a></li>`;
-    } else {
-        str += `<li class="page-item disabled"><span class="page-link">Previous</span></li>`;
-    }
+        str += `<li class="page-item"><a class="page-link" href="#" data-page="${Number(page.currentPage) - 1}">«</a></li>`;
+    // } else {
+    //     str += `<li class="page-item disabled"><span class="page-link">«</span></li>`;
+     }
 
     for (let i = 1; i <= total; i++) {
         if (Number(page.currentPage) === i) {
@@ -167,9 +167,9 @@ function pageBtn(page) {
     };
 
     if (page.hasNext) {
-        str += `<li class="page-item"><a class="page-link" href="#" data-page="${Number(page.currentPage) + 1}">Next</a></li>`;
-    } else {
-        str += `<li class="page-item disabled"><span class="page-link">Next</span></li>`;
+        str += `<li class="page-item"><a class="page-link" href="#" data-page="${Number(page.currentPage) + 1}">»</a></li>`;
+    // } else {
+    //     str += `<li class="page-item disabled"><span class="page-link">»</span></li>`;
     }
 
     pageid.innerHTML = str;
@@ -199,7 +199,7 @@ $(window).scroll(function() {
     }
     let str = $("#percent");
     str.text("");
-    let nowH = $(window).scrollTop() + $(window).height() - 10;
+    let nowH = $(window).scrollTop() + $(window).height() - 20;
     let bodyH = $("body").height();
     let distance = $('<p></p>').text(((nowH / bodyH) * 100).toFixed(0) + '%');
     str.append(distance);
