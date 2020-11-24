@@ -199,8 +199,11 @@ $(window).scroll(function() {
     }
     let str = $("#percent");
     str.text("");
-    let nowH = $(window).scrollTop() + $(window).height() - 20;
+    let nowH = $(window).scrollTop() + $(window).height();
     let bodyH = $("body").height();
+    if (nowH > bodyH){
+        nowH = bodyH;
+    }
     let distance = $('<p></p>').text(((nowH / bodyH) * 100).toFixed(0) + '%');
     str.append(distance);
 });
