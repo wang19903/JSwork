@@ -1,109 +1,169 @@
+@charset "UTF-8";
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+/* HTML5 display-role reset for older browsers */
+article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol, ul {
+  list-style: none;
+}
+
+blockquote, q {
+  quotes: none;
+}
+
+blockquote:before, blockquote:after,
+q:before, q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/*先重置css預設後開始做樣式*/
+/*外圍容器 */
 .wrap {
-  margin: 0 auto;
+  max-width: 1024px;
+  margin: auto;
+  padding-right: 2px;
+  padding-left: 2px;
 }
 
-.header {
+/* 封面照片位置設定 */
+.coverpic {
   background: url("https://i.imgur.com/CSUagNY.png");
+  width: 100%;
+  height: 496px;
+  background-position: top;
   background-size: cover;
-  height: 400px;
   position: relative;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
 }
 
-h1 {
+/* 標題設定 */
+.coverpic_title {
   font-size: 40px;
   color: #FFFFFF;
   letter-spacing: 3.89px;
+  padding-top: 89px;
+  margin-bottom: 96px;
 }
 
-#select {
-  background: rgba(255, 255, 255, 0.7);
-  border: 3px solid #FFFFFF;
-  border-radius: 3px;
-  margin-top: 96px;
-  margin-bottom: 10px;
-  width: 452px;
+/* 選單設定 */
+.selectID {
+  width: 44%;
   height: 48px;
-  font-size: 18px;
+  border: 1px solid #000;
+  color: #5f5f5f;
 }
 
-.ButtonArea {
-  background: #FFFFFF;
-  -webkit-box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
-          box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
+/* 蓋在一、二塊之上的第三塊設定 */
+.popmenu {
+  width: 78%;
+  background-color: white;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.2);
   border-radius: 5px;
-  width: 70%;
-  bottom: -90px;
-  text-align: left;
   position: absolute;
-  font-size: 18px;
+  bottom: 50px;
+  z-index: 2;
 }
 
-.btn {
-  font-size: 20px;
-  color: #FFFFFF;
-  margin: 5px;
-  padding-right: 10px;
-  padding-left: 10px;
+.popmenu_result {
+  margin-bottom: 18px;
+  color: white;
+  cursor: pointer;
 }
 
-.btn1 {
-  background: #8A82CC;
-  border-radius: 5px;
+.popmenu_title {
+  color: black;
+  font-size: 24px;
+  text-align: left;
+  columns: #000000;
+  margin-top: 20px;
+  margin-left: 26px;
+  margin-bottom: 14px;
 }
 
-.btn2 {
-  background: #FFA782;
-  border-radius: 5px;
+/* 第二塊只是要用來做分隔線 */
+.contentTop {
+  width: 100%;
+  height: 100px;
+  background: white;
+  border-bottom: 5px dotted #559AC8;
+  position: absolute;
+  bottom: 0px;
 }
 
-.btn3 {
-  background: #F5D005;
-  border-radius: 5px;
-}
-
-.btn4 {
-  background: #559AC8;
-  border-radius: 5px;
-}
-
-#zoneName {
-  padding-top: 130px;
-  border-bottom: 1px dotted #559AC8;
-  width: 87%;
-  margin: auto;
-  font-size: 28px;
-  font-weight: 600;
+/* 第四塊 */
+.title {
+  width: 100%;
+  background-color: white;
+  font-size: 36px;
+  color: #8A82CC;
+  margin-bottom: 24px;
+  padding-top: 30px;
 }
 
 .marquee {
   font-size: 28px;
   font-weight: bold;
   color: rgba(0, 140, 255, 0.884);
-  position: relative;
-  -webkit-animation: shake 5s infinite alternate;
-          animation: shake 5s infinite alternate;
 }
 
-@-webkit-keyframes shake {
-  from {
-    left: -40%;
-  }
-  to {
-    left: 40%;
-  }
+.page-item {
+  color: #4A4A4A;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0px 10px;
 }
 
-@keyframes shake {
-  from {
-    left: -40%;
-  }
-  to {
-    left: 40%;
-  }
+.page-number-item {
+  margin: 5px;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.page-number-item:hover {
+  background: #c5d4fdee;
+}
+
+.page-number-item.active {
+  background: #8da8f3ee;
+  font-weight: bold;
 }
 
 .footer {
@@ -121,30 +181,25 @@ h1 {
   padding-bottom: 12px;
 }
 
-/**/
 .goTop {
   background: #A9A9A9;
   display: none;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
+  flex-direction: row;
   position: fixed;
   bottom: 0;
   right: 0;
-  width: 50px;
+  width: 65px;
   height: 30px;
 }
 
 .fas {
   color: #FFF;
-  padding-top: px;
+  padding-top: 1px;
 }
 
 #percent {
-  line-height: 2;
+  line-height: 2em;
   color: #FFF;
   font-weight: bold;
   font-size: 15px;
 }
-/*# sourceMappingURL=travel.css.map */
