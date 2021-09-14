@@ -1,0 +1,346 @@
+@charset "UTF-8";
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+
+body {
+  line-height: 1;
+}
+
+ol,
+ul {
+  list-style: none;
+}
+
+blockquote,
+q {
+  quotes: none;
+}
+
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: '';
+  content: none;
+}
+
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+/* HTML5 display-role reset for older browsers */
+body {
+  font-family: "微軟正黑體";
+}
+
+.img img {
+  max-height: 117px;
+}
+
+.input label {
+  margin-bottom: 0px;
+  color: #FFD366;
+  font-size: 18px;
+}
+
+.input input {
+  border-radius: 10px;
+  border: #FFD366 2px soild;
+  background: rgba(255, 255, 255, 0.18);
+  font-size: 24px;
+}
+
+.btn.btn {
+  border-radius: 50%;
+  background-color: #FFD366;
+  width: 120px;
+  height: 120px;
+  font-size: 24px;
+  font-weight: bolder;
+}
+
+.result {
+  text-align: center;
+}
+
+.result h2 {
+  font-size: 2rem;
+}
+
+table {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+td {
+  padding-left: 5px;
+  font-size: 20px;
+  width: 130px;
+}
+
+span {
+  font-size: 12px;
+  vertical-align: bottom;
+}
+
+.underweight {
+  border-left: 7px solid #31BAF9;
+}
+
+.Normal {
+  border-left: 7px solid #86D73F;
+}
+
+.Overweight {
+  border-left: 7px solid #FF982D;
+}
+
+.Obese {
+  border-left: 7px solid #FF6C03;
+}
+
+.SeverelyObese {
+  border-left: 7px solid #FF1200;
+}
+
+.circle {
+  position: relative;
+}
+
+.circle h2 {
+  text-align: center;
+  padding-top: 20px;
+}
+
+.circle p {
+  text-align: center;
+  padding-top: 10px;
+}
+
+.btnBorder-underweight {
+  border: 5px solid #31BAF9;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  font-size: 24px;
+}
+
+.btnBorder-Normal {
+  border: 7px solid #86D73F;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  font-size: 24px;
+}
+
+.btnBorder-Overweight {
+  border: 5px solid #FF982D;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  font-size: 24px;
+}
+
+.btnBorder-Obese {
+  border: 5px solid #FF6C03;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  font-size: 24px;
+}
+
+.btnBorder-SeverelyObese {
+  border: 5px solid #FF1200;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  font-size: 24px;
+}
+
+.p-underweight {
+  color: #31BAF9;
+}
+
+.p-Normal {
+  color: #86D73F;
+}
+
+.p-Overweight {
+  color: #FF982D;
+}
+
+.p-Obese {
+  color: #FF6C03;
+}
+
+.p-SeverelyObese {
+  color: #FF1200;
+}
+
+.icon.icon {
+  background-image: url(/img/icons_loop.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  width: 30px;
+  height: 30px;
+  bottom: 10px;
+  right: 0px;
+  border-radius: 50%;
+  position: absolute;
+  border: 0px;
+  /*消除黑邊*/
+}
+
+.circle input:hover {
+  animation: spin 1s infinite;
+  width: 33px;
+  height: 33px;
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(360deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.btnArea h3 {
+  padding-top: 10px;
+  font-size: 24px;
+  font-weight: bolder;
+  text-align: center;
+}
+
+.bg-underweight.bg-underweight {
+  background-color: #31BAF9;
+}
+
+.bg-Normal.bg-Normal {
+  background-color: #86D73F;
+}
+
+.bg-Overweight.bg-Overweight {
+  background-color: #FF982D;
+}
+
+.bg-Obese.bg-Obese {
+  background-color: #FF6C03;
+}
+
+.bg-SeverelyObese.bg-SeverelyObese {
+  background-color: #FF1200;
+}
+
+@media (max-width:769px) {
+  td{
+    font-size: 15px;
+    font-weight: bold;
+  }
+}
